@@ -20,14 +20,16 @@ const CustomDialog = ({ open, setOpen, dialogTitle, content }) => {
                 TransitionComponent={Transition}
                 keepMounted
                 onClose={() => setOpen(false)}
-                fullScreen
+                 maxWidth={'100'}
             >
                 <DialogTitle className={'font-iran text-right'}>{dialogTitle}</DialogTitle>
-                <DialogContent>        
+                <DialogContent>
+                    <div>
                         {content()}
+                    </div>
                 </DialogContent>
                 <DialogActions dir='rtl'>
-                    <CustomButton className='ml-10' variant='primary'  onClick={() => setOpen(false)}>بستن</CustomButton>
+                    <CustomButton className='ml-10' variant='primary' onClick={() => setOpen(false)}>بستن</CustomButton>
                 </DialogActions>
             </Dialog>
         </div>

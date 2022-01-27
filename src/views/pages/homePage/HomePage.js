@@ -52,7 +52,7 @@ const HomePage = () => {
         )
     }
 
-    const handleOpenVideoDialog = (title, url,pooster) => {
+    const handleOpenVideoDialog = (title, url, pooster) => {
         setModalData(prevState => ({
             ...prevState,
             dialogTitle: title,
@@ -62,7 +62,6 @@ const HomePage = () => {
                         url={url}
                         playing={true}
                         width={'100%'}
-                        height={'100%'}
                         config={{ file: { attributes: { poster: pooster } } }}
                     />
                 )
@@ -83,7 +82,7 @@ const HomePage = () => {
                             xs={12}
                             md={4}
                             key={item.id}
-                            onClick={() => handleOpenVideoDialog(item.attributes.title, item.attributes.preview_src,item.attributes.big_poster)}
+                            onClick={() => handleOpenVideoDialog(item.attributes.title, item.attributes.preview_src, item.attributes.big_poster)}
 
                         >
                             <VideoCard
